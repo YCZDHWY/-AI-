@@ -1,0 +1,10 @@
+# 渲染检查产生的临时图片
+.build_doc/render/
+
+# Office 临时文件
+~$*.docx
+*.tmp
+
+# 系统文件
+Thumbs.db
+.DS_Store
