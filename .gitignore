@@ -8,3 +8,13 @@
 # 系统文件
 Thumbs.db
 .DS_Store
+
+# Local runtime and credentials
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/
+.env
+firmware/config.py
+test-results/

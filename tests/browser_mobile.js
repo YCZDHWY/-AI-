@@ -1,0 +1,12 @@
+await page.setViewportSize({width: 375, height: 812});
+await page.reload({waitUntil: "networkidle"});
+await page.waitForFunction(() => document.querySelector("#soil").textContent !== "--");
+assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+await page.locator("#hours").selectOption("1");
+await page.route("**/api/**", route => route.abort());
+await page.locator("#hours").selectOption("24");
+await expect(page.locator("#error")).toBeVisible();
+await page.unroute("**/api/**");
+await page.locator("#hours").selectOption("1");
+await expect(page.locator("#error")).toBeHidden();
+return await page.screenshot({fullPage: true});

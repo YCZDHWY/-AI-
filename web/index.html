@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>植物养护 · 工作台</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/vendor/chart.umd.min.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header><span class="brand">植物养护</span><span>设备工作台</span><span id="mode" class="badge">连接中</span></header>
+  <main>
+    <div class="heading"><div><p class="eyebrow">PLANT / 01</p><h1>一号植物</h1></div><div class="connection"><span id="status">等待数据</span><small id="updated">尚未更新</small></div></div>
+    <p id="error" class="error" role="alert" hidden></p>
+    <section class="metrics" aria-label="环境数据">
+      <article><h2>土壤相对湿度</h2><p><strong id="soil">--</strong><span>%</span></p><small id="raw">ADC --</small></article>
+      <article><h2>环境温度</h2><p><strong id="temperature">--</strong><span>°C</span></p><small>空气温度</small></article>
+      <article><h2>空气湿度</h2><p><strong id="humidity">--</strong><span>%</span></p><small>相对湿度</small></article>
+      <article><h2>光照强度</h2><p><strong id="light">--</strong><span>lx</span></p><small>环境照度</small></article>
+    </section>
+    <section class="history"><div class="section-title"><h2>土壤湿度记录</h2><label>时间范围 <select id="hours"><option value="1">最近 1 小时</option><option value="24" selected>最近 24 小时</option><option value="168">最近 7 天</option></select></label></div><div class="chart"><canvas id="history" aria-label="土壤相对湿度随时间的变化" role="img"></canvas><p id="chart-empty" hidden>暂无记录</p></div></section>
+    <section class="control"><div><h2>浇水状态</h2><p>未启用</p></div><span class="badge neutral">待硬件验收</span></section>
+    <footer><span id="sensor-errors">传感器状态待更新</span><span id="samples">0 条记录</span></footer>
+  </main>
+</body>
+</html>
